@@ -32,4 +32,3 @@ export declare class QRCodeComponent implements OnChanges {
     static ɵfac: i0.ɵɵFactoryDeclaration<QRCodeComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<QRCodeComponent, "qrcode", never, { "colordark": "colordark"; "colorlight": "colorlight"; "level": "level"; "hidetitle": "hidetitle"; "size": "size"; "usesvg": "usesvg"; "allowEmptyString": "allowEmptyString"; "qrdata": "qrdata"; "colorDark": "colorDark"; "colorLight": "colorLight"; "cssClass": "cssClass"; "elementType": "elementType"; "errorCorrectionLevel": "errorCorrectionLevel"; "margin": "margin"; "scale": "scale"; "version": "version"; "width": "width"; }, {}, never, never>;
 }
-//# sourceMappingURL=angularx-qrcode.component.d.ts.map

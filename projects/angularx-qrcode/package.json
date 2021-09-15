@@ -1,11 +1,11 @@
 {
-  "name": "angularx-qrcode",
-  "version": "11.0.0",
+  "name": "@juddkirby/angularx-qrcode",
+  "version": "12.0.0",
   "author": {
-    "name": "Andreas Jacob <andreas@cordobo.de>",
-    "url": "http://cordobo.com/"
+    "name": "Judd Kirby <hello@juddkirby.co>",
+    "url": "http://juddkirby.co/"
   },
-  "description": "Simple QRCode module generator for Angular4/5/6/7/8/9/10/11+ and Ionic 3/4/5 using node-qrcode",
+  "description": "Simple QRCode module generator for Angular 12 node-qrcode",
   "license": "MIT",
   "peerDependencies": {
     "@angular/common": "^12.2.0",
@@ -17,12 +17,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/cordobo/angularx-qrcode.git"
+    "url": "https://github.com/juddkirby/angularx-qrcode.git"
   },
   "bugs": {
-    "url": "https://github.com/cordobo/angularx-qrcode/issues"
+    "url": "https://github.com/juddkirby/angularx-qrcode/issues"
   },
-  "homepage": "https://github.com/cordobo/angularx-qrcode#readme",
+  "homepage": "https://github.com/juddkirby/angularx-qrcode#readme",
   "publishConfig": {
     "@juddkirby:registry": "https://npm.pkg.github.com"
   }

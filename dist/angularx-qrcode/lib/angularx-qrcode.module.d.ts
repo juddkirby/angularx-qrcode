@@ -5,4 +5,3 @@ export declare class QRCodeModule {
     static ɵmod: i0.ɵɵNgModuleDeclaration<QRCodeModule, [typeof i1.QRCodeComponent], never, [typeof i1.QRCodeComponent]>;
     static ɵinj: i0.ɵɵInjectorDeclaration<QRCodeModule>;
 }
-//# sourceMappingURL=angularx-qrcode.module.d.ts.map
