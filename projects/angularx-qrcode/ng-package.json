@@ -6,6 +6,5 @@
     "umdModuleIds": {
       "qrcode": "qrcode"
     }
-  },
-  "whitelistedNonPeerDependencies": ["qrcode"]
+  }
 }

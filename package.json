@@ -11,7 +11,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build angularx-qrcode --configuration production",
+    "build": "ng build angularx-qrcode",
     "test": "ng test",
     "lint": "ng lint",
     "prebuild": "rimraf dist tmp",
