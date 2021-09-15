@@ -2,7 +2,30 @@
     typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/core'), require('qrcode')) :
     typeof define === 'function' && define.amd ? define('angularx-qrcode', ['exports', '@angular/core', 'qrcode'], factory) :
     (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global['angularx-qrcode'] = {}, global.ng.core, global.qrcode));
-}(this, (function (exports, core, QRCode) { 'use strict';
+}(this, (function (exports, i0, QRCode) { 'use strict';
+
+    function _interopNamespace(e) {
+        if (e && e.__esModule) return e;
+        var n = Object.create(null);
+        if (e) {
+            Object.keys(e).forEach(function (k) {
+                if (k !== 'default') {
+                    var d = Object.getOwnPropertyDescriptor(e, k);
+                    Object.defineProperty(n, k, d.get ? d : {
+                        enumerable: true,
+                        get: function () {
+                            return e[k];
+                        }
+                    });
+                }
+            });
+        }
+        n['default'] = e;
+        return Object.freeze(n);
+    }
+
+    var i0__namespace = /*#__PURE__*/_interopNamespace(i0);
+    var QRCode__namespace = /*#__PURE__*/_interopNamespace(QRCode);
 
     /*! *****************************************************************************
     Copyright (c) Microsoft Corporation.
@@ -23,11 +46,13 @@
         extendStatics = Object.setPrototypeOf ||
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
             function (d, b) { for (var p in b)
-                if (b.hasOwnProperty(p))
+                if (Object.prototype.hasOwnProperty.call(b, p))
                     d[p] = b[p]; };
         return extendStatics(d, b);
     };
     function __extends(d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
         extendStatics(d, b);
         function __() { this.constructor = d; }
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
@@ -170,10 +195,10 @@
             k2 = k;
         o[k2] = m[k];
     });
-    function __exportStar(m, exports) {
+    function __exportStar(m, o) {
         for (var p in m)
-            if (p !== "default" && !exports.hasOwnProperty(p))
-                __createBinding(exports, m, p);
+            if (p !== "default" && !Object.prototype.hasOwnProperty.call(o, p))
+                __createBinding(o, m, p);
     }
     function __values(o) {
         var s = typeof Symbol === "function" && Symbol.iterator, m = s && o[s], i = 0;
@@ -213,11 +238,13 @@
         }
         return ar;
     }
+    /** @deprecated */
     function __spread() {
         for (var ar = [], i = 0; i < arguments.length; i++)
             ar = ar.concat(__read(arguments[i]));
         return ar;
     }
+    /** @deprecated */
     function __spreadArrays() {
         for (var s = 0, i = 0, il = arguments.length; i < il; i++)
             s += arguments[i].length;
@@ -226,7 +253,17 @@
                 r[k] = a[j];
         return r;
     }
-    ;
+    function __spreadArray(to, from, pack) {
+        if (pack || arguments.length === 2)
+            for (var i = 0, l = from.length, ar; i < l; i++) {
+                if (ar || !(i in from)) {
+                    if (!ar)
+                        ar = Array.prototype.slice.call(from, 0, i);
+                    ar[i] = from[i];
+                }
+            }
+        return to.concat(ar || Array.prototype.slice.call(from));
+    }
     function __await(v) {
         return this instanceof __await ? (this.v = v, this) : new __await(v);
     }
@@ -283,7 +320,7 @@
         var result = {};
         if (mod != null)
             for (var k in mod)
-                if (Object.hasOwnProperty.call(mod, k))
+                if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k))
                     __createBinding(result, mod, k);
         __setModuleDefault(result, mod);
         return result;
@@ -291,20 +328,24 @@
     function __importDefault(mod) {
         return (mod && mod.__esModule) ? mod : { default: mod };
     }
-    function __classPrivateFieldGet(receiver, privateMap) {
-        if (!privateMap.has(receiver)) {
-            throw new TypeError("attempted to get private field on non-instance");
-        }
-        return privateMap.get(receiver);
+    function __classPrivateFieldGet(receiver, state, kind, f) {
+        if (kind === "a" && !f)
+            throw new TypeError("Private accessor was defined without a getter");
+        if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver))
+            throw new TypeError("Cannot read private member from an object whose class did not declare it");
+        return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
     }
-    function __classPrivateFieldSet(receiver, privateMap, value) {
-        if (!privateMap.has(receiver)) {
-            throw new TypeError("attempted to set private field on non-instance");
-        }
-        privateMap.set(receiver, value);
-        return value;
+    function __classPrivateFieldSet(receiver, state, value, kind, f) {
+        if (kind === "m")
+            throw new TypeError("Private method is not writable");
+        if (kind === "a" && !f)
+            throw new TypeError("Private accessor was defined without a setter");
+        if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver))
+            throw new TypeError("Cannot write private member to an object whose class did not declare it");
+        return (kind === "a" ? f.call(receiver, value) : f ? f.value = value : state.set(receiver, value)), value;
     }
 
+    var _c0 = ["qrcElement"];
     var QRCodeComponent = /** @class */ (function () {
         function QRCodeComponent(renderer) {
             this.renderer = renderer;
@@ -362,7 +403,7 @@
         QRCodeComponent.prototype.toDataURL = function () {
             var _this = this;
             return new Promise(function (resolve, reject) {
-                QRCode.toDataURL(_this.qrdata, {
+                QRCode__namespace.toDataURL(_this.qrdata, {
                     color: {
                         dark: _this.colorDark,
                         light: _this.colorLight,
@@ -385,7 +426,7 @@
         QRCodeComponent.prototype.toCanvas = function (canvas) {
             var _this = this;
             return new Promise(function (resolve, reject) {
-                QRCode.toCanvas(canvas, _this.qrdata, {
+                QRCode__namespace.toCanvas(canvas, _this.qrdata, {
                     color: {
                         dark: _this.colorDark,
                         light: _this.colorLight,
@@ -408,7 +449,7 @@
         QRCodeComponent.prototype.toSVG = function () {
             var _this = this;
             return new Promise(function (resolve, reject) {
-                QRCode.toString(_this.qrdata, {
+                QRCode__namespace.toString(_this.qrdata, {
                     color: {
                         dark: _this.colorDark,
                         light: _this.colorLight,
@@ -511,49 +552,90 @@
         };
         return QRCodeComponent;
     }());
-    QRCodeComponent.decorators = [
-        { type: core.Component, args: [{
-                    selector: 'qrcode',
-                    changeDetection: core.ChangeDetectionStrategy.OnPush,
-                    template: "<div #qrcElement [class]=\"cssClass\"></div>"
-                },] }
-    ];
-    QRCodeComponent.ctorParameters = function () { return [
-        { type: core.Renderer2 }
-    ]; };
-    QRCodeComponent.propDecorators = {
-        colordark: [{ type: core.Input }],
-        colorlight: [{ type: core.Input }],
-        level: [{ type: core.Input }],
-        hidetitle: [{ type: core.Input }],
-        size: [{ type: core.Input }],
-        usesvg: [{ type: core.Input }],
-        allowEmptyString: [{ type: core.Input }],
-        qrdata: [{ type: core.Input }],
-        colorDark: [{ type: core.Input }],
-        colorLight: [{ type: core.Input }],
-        cssClass: [{ type: core.Input }],
-        elementType: [{ type: core.Input }],
-        errorCorrectionLevel: [{ type: core.Input }],
-        margin: [{ type: core.Input }],
-        scale: [{ type: core.Input }],
-        version: [{ type: core.Input }],
-        width: [{ type: core.Input }],
-        qrcElement: [{ type: core.ViewChild, args: ['qrcElement', { static: true },] }]
-    };
+    QRCodeComponent.ɵfac = function QRCodeComponent_Factory(t) { return new (t || QRCodeComponent)(i0__namespace.ɵɵdirectiveInject(i0__namespace.Renderer2)); };
+    QRCodeComponent.ɵcmp = /*@__PURE__*/ i0__namespace.ɵɵdefineComponent({ type: QRCodeComponent, selectors: [["qrcode"]], viewQuery: function QRCodeComponent_Query(rf, ctx) {
+            if (rf & 1) {
+                i0__namespace.ɵɵviewQuery(_c0, 7);
+            }
+            if (rf & 2) {
+                var _t = void 0;
+                i0__namespace.ɵɵqueryRefresh(_t = i0__namespace.ɵɵloadQuery()) && (ctx.qrcElement = _t.first);
+            }
+        }, inputs: { colordark: "colordark", colorlight: "colorlight", level: "level", hidetitle: "hidetitle", size: "size", usesvg: "usesvg", allowEmptyString: "allowEmptyString", qrdata: "qrdata", colorDark: "colorDark", colorLight: "colorLight", cssClass: "cssClass", elementType: "elementType", errorCorrectionLevel: "errorCorrectionLevel", margin: "margin", scale: "scale", version: "version", width: "width" }, features: [i0__namespace.ɵɵNgOnChangesFeature], decls: 2, vars: 2, consts: [["qrcElement", ""]], template: function QRCodeComponent_Template(rf, ctx) {
+            if (rf & 1) {
+                i0__namespace.ɵɵelement(0, "div", null, 0);
+            }
+            if (rf & 2) {
+                i0__namespace.ɵɵclassMap(ctx.cssClass);
+            }
+        }, encapsulation: 2, changeDetection: 0 });
+    (function () {
+        (typeof ngDevMode === "undefined" || ngDevMode) && i0__namespace.ɵsetClassMetadata(QRCodeComponent, [{
+                type: i0.Component,
+                args: [{
+                        selector: 'qrcode',
+                        changeDetection: i0.ChangeDetectionStrategy.OnPush,
+                        template: "<div #qrcElement [class]=\"cssClass\"></div>",
+                    }]
+            }], function () { return [{ type: i0__namespace.Renderer2 }]; }, { colordark: [{
+                    type: i0.Input
+                }], colorlight: [{
+                    type: i0.Input
+                }], level: [{
+                    type: i0.Input
+                }], hidetitle: [{
+                    type: i0.Input
+                }], size: [{
+                    type: i0.Input
+                }], usesvg: [{
+                    type: i0.Input
+                }], allowEmptyString: [{
+                    type: i0.Input
+                }], qrdata: [{
+                    type: i0.Input
+                }], colorDark: [{
+                    type: i0.Input
+                }], colorLight: [{
+                    type: i0.Input
+                }], cssClass: [{
+                    type: i0.Input
+                }], elementType: [{
+                    type: i0.Input
+                }], errorCorrectionLevel: [{
+                    type: i0.Input
+                }], margin: [{
+                    type: i0.Input
+                }], scale: [{
+                    type: i0.Input
+                }], version: [{
+                    type: i0.Input
+                }], width: [{
+                    type: i0.Input
+                }], qrcElement: [{
+                    type: i0.ViewChild,
+                    args: ['qrcElement', { static: true }]
+                }] });
+    })();
 
     var QRCodeModule = /** @class */ (function () {
         function QRCodeModule() {
         }
         return QRCodeModule;
     }());
-    QRCodeModule.decorators = [
-        { type: core.NgModule, args: [{
-                    providers: [],
-                    declarations: [QRCodeComponent],
-                    exports: [QRCodeComponent],
-                },] }
-    ];
+    QRCodeModule.ɵfac = function QRCodeModule_Factory(t) { return new (t || QRCodeModule)(); };
+    QRCodeModule.ɵmod = /*@__PURE__*/ i0__namespace.ɵɵdefineNgModule({ type: QRCodeModule });
+    QRCodeModule.ɵinj = /*@__PURE__*/ i0__namespace.ɵɵdefineInjector({ providers: [] });
+    (function () {
+        (typeof ngDevMode === "undefined" || ngDevMode) && i0__namespace.ɵsetClassMetadata(QRCodeModule, [{
+                type: i0.NgModule,
+                args: [{
+                        providers: [],
+                        declarations: [QRCodeComponent],
+                        exports: [QRCodeComponent],
+                    }]
+            }], null, null);
+    })();
+    (function () { (typeof ngJitMode === "undefined" || ngJitMode) && i0__namespace.ɵɵsetNgModuleScope(QRCodeModule, { declarations: [QRCodeComponent], exports: [QRCodeComponent] }); })();
 
     /*
      * Public API Surface of angularx-qrcode

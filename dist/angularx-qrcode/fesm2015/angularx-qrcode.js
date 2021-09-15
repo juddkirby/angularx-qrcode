@@ -1,6 +1,8 @@
-import { Component, ChangeDetectionStrategy, Renderer2, Input, ViewChild, NgModule } from '@angular/core';
-import { toDataURL, toCanvas, toString } from 'qrcode';
+import * as i0 from '@angular/core';
+import { Component, ChangeDetectionStrategy, Input, ViewChild, NgModule } from '@angular/core';
+import * as QRCode from 'qrcode';
 
+const _c0 = ["qrcElement"];
 class QRCodeComponent {
     constructor(renderer) {
         this.renderer = renderer;
@@ -57,7 +59,7 @@ class QRCodeComponent {
     }
     toDataURL() {
         return new Promise((resolve, reject) => {
-            toDataURL(this.qrdata, {
+            QRCode.toDataURL(this.qrdata, {
                 color: {
                     dark: this.colorDark,
                     light: this.colorLight,
@@ -79,7 +81,7 @@ class QRCodeComponent {
     }
     toCanvas(canvas) {
         return new Promise((resolve, reject) => {
-            toCanvas(canvas, this.qrdata, {
+            QRCode.toCanvas(canvas, this.qrdata, {
                 color: {
                     dark: this.colorDark,
                     light: this.colorLight,
@@ -101,7 +103,7 @@ class QRCodeComponent {
     }
     toSVG() {
         return new Promise((resolve, reject) => {
-            toString(this.qrdata, {
+            QRCode.toString(this.qrdata, {
                 color: {
                     dark: this.colorDark,
                     light: this.colorLight,
@@ -191,46 +193,77 @@ class QRCodeComponent {
         }
     }
 }
-QRCodeComponent.decorators = [
-    { type: Component, args: [{
+QRCodeComponent.ɵfac = function QRCodeComponent_Factory(t) { return new (t || QRCodeComponent)(i0.ɵɵdirectiveInject(i0.Renderer2)); };
+QRCodeComponent.ɵcmp = /*@__PURE__*/ i0.ɵɵdefineComponent({ type: QRCodeComponent, selectors: [["qrcode"]], viewQuery: function QRCodeComponent_Query(rf, ctx) { if (rf & 1) {
+        i0.ɵɵviewQuery(_c0, 7);
+    } if (rf & 2) {
+        let _t;
+        i0.ɵɵqueryRefresh(_t = i0.ɵɵloadQuery()) && (ctx.qrcElement = _t.first);
+    } }, inputs: { colordark: "colordark", colorlight: "colorlight", level: "level", hidetitle: "hidetitle", size: "size", usesvg: "usesvg", allowEmptyString: "allowEmptyString", qrdata: "qrdata", colorDark: "colorDark", colorLight: "colorLight", cssClass: "cssClass", elementType: "elementType", errorCorrectionLevel: "errorCorrectionLevel", margin: "margin", scale: "scale", version: "version", width: "width" }, features: [i0.ɵɵNgOnChangesFeature], decls: 2, vars: 2, consts: [["qrcElement", ""]], template: function QRCodeComponent_Template(rf, ctx) { if (rf & 1) {
+        i0.ɵɵelement(0, "div", null, 0);
+    } if (rf & 2) {
+        i0.ɵɵclassMap(ctx.cssClass);
+    } }, encapsulation: 2, changeDetection: 0 });
+(function () { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(QRCodeComponent, [{
+        type: Component,
+        args: [{
                 selector: 'qrcode',
                 changeDetection: ChangeDetectionStrategy.OnPush,
-                template: `<div #qrcElement [class]="cssClass"></div>`
-            },] }
-];
-QRCodeComponent.ctorParameters = () => [
-    { type: Renderer2 }
-];
-QRCodeComponent.propDecorators = {
-    colordark: [{ type: Input }],
-    colorlight: [{ type: Input }],
-    level: [{ type: Input }],
-    hidetitle: [{ type: Input }],
-    size: [{ type: Input }],
-    usesvg: [{ type: Input }],
-    allowEmptyString: [{ type: Input }],
-    qrdata: [{ type: Input }],
-    colorDark: [{ type: Input }],
-    colorLight: [{ type: Input }],
-    cssClass: [{ type: Input }],
-    elementType: [{ type: Input }],
-    errorCorrectionLevel: [{ type: Input }],
-    margin: [{ type: Input }],
-    scale: [{ type: Input }],
-    version: [{ type: Input }],
-    width: [{ type: Input }],
-    qrcElement: [{ type: ViewChild, args: ['qrcElement', { static: true },] }]
-};
+                template: `<div #qrcElement [class]="cssClass"></div>`,
+            }]
+    }], function () { return [{ type: i0.Renderer2 }]; }, { colordark: [{
+            type: Input
+        }], colorlight: [{
+            type: Input
+        }], level: [{
+            type: Input
+        }], hidetitle: [{
+            type: Input
+        }], size: [{
+            type: Input
+        }], usesvg: [{
+            type: Input
+        }], allowEmptyString: [{
+            type: Input
+        }], qrdata: [{
+            type: Input
+        }], colorDark: [{
+            type: Input
+        }], colorLight: [{
+            type: Input
+        }], cssClass: [{
+            type: Input
+        }], elementType: [{
+            type: Input
+        }], errorCorrectionLevel: [{
+            type: Input
+        }], margin: [{
+            type: Input
+        }], scale: [{
+            type: Input
+        }], version: [{
+            type: Input
+        }], width: [{
+            type: Input
+        }], qrcElement: [{
+            type: ViewChild,
+            args: ['qrcElement', { static: true }]
+        }] }); })();
 
 class QRCodeModule {
 }
-QRCodeModule.decorators = [
-    { type: NgModule, args: [{
+QRCodeModule.ɵfac = function QRCodeModule_Factory(t) { return new (t || QRCodeModule)(); };
+QRCodeModule.ɵmod = /*@__PURE__*/ i0.ɵɵdefineNgModule({ type: QRCodeModule });
+QRCodeModule.ɵinj = /*@__PURE__*/ i0.ɵɵdefineInjector({ providers: [] });
+(function () { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(QRCodeModule, [{
+        type: NgModule,
+        args: [{
                 providers: [],
                 declarations: [QRCodeComponent],
                 exports: [QRCodeComponent],
-            },] }
-];
+            }]
+    }], null, null); })();
+(function () { (typeof ngJitMode === "undefined" || ngJitMode) && i0.ɵɵsetNgModuleScope(QRCodeModule, { declarations: [QRCodeComponent], exports: [QRCodeComponent] }); })();
 
 /*
  * Public API Surface of angularx-qrcode
