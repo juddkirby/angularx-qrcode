@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/cordobo/angularx-qrcode/issues"
   },
-  "homepage": "https://github.com/cordobo/angularx-qrcode#readme"
+  "homepage": "https://github.com/cordobo/angularx-qrcode#readme",
+  "publishConfig": {
+    "@juddkirby:registry": "https://npm.pkg.github.com"
+  }
 }
