@@ -1,29 +1,29 @@
 {
-  "name": "@juddkirby/angularx-qrcode",
-  "version": "12.0.0",
+  "name": "@socialimpactsoftware/angularx-qrcode",
+  "version": "12.1.0",
   "author": {
-    "name": "Judd Kirby <hello@juddkirby.co>",
-    "url": "http://juddkirby.co/"
+    "name": "Judd Kirby <judd@researchpath.com.au>",
+    "url": "http://researchpath.com.au"
   },
   "description": "Simple QRCode module generator for Angular 12 node-qrcode",
   "license": "MIT",
   "peerDependencies": {
-    "@angular/common": "^12.2.0",
-    "@angular/core": "^12.2.0",
-    "qrcode": "1.4.2"
+    "@angular/common": "12",
+    "@angular/core": "12",
+    "qrcode": "~1.4.2"
   },
   "dependencies": {
     "tslib": "^2.3.0"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/juddkirby/angularx-qrcode.git"
+    "url": "https://github.com/socialimpactsoftware/angularx-qrcode.git"
   },
   "bugs": {
-    "url": "https://github.com/juddkirby/angularx-qrcode/issues"
+    "url": "https://github.com/socialimpactsoftware/angularx-qrcode/issues"
   },
-  "homepage": "https://github.com/juddkirby/angularx-qrcode#readme",
+  "homepage": "https://github.com/socialimpactsoftware/angularx-qrcode#readme",
   "publishConfig": {
-    "@juddkirby:registry": "https://npm.pkg.github.com"
+    "@socialimpactsoftware:registry": "https://npm.pkg.github.com"
   }
 }
