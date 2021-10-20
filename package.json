@@ -23,7 +23,7 @@
     "build:demo:prod": "npm run build && ng build demo-app --configuration production"
   },
   "dependencies": {
-    "qrcode": "1.4.2"
+    "qrcode": "1.4.4"
   },
   "peerDependencies": {},
   "devDependencies": {
